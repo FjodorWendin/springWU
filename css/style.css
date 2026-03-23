@@ -5,7 +5,6 @@
 
 h1{
     color: #3d405b;
-    font-size: 50px;
 }
 
 #homepage{
@@ -14,7 +13,18 @@ h1{
     flex-direction: column;
 }
 
-.home{
+
+@media screen and (min-width: 401px){
+    .home-button{
+        color: #3d405b;
+        font-size: 10vh;
+        text-decoration: none;
+        justify-self: center;   
+        margin-top: 2vh;
+        position: fixed;
+        z-index: 2;
+    }
+    .home{
     display: grid;
     grid-template-rows: 2fr 1fr;
     grid-template-columns: 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
@@ -24,25 +34,53 @@ h1{
     ;
     width: 80%; 
     height: 20vh;
-    border-top: 1px solid #3d405b;
-    margin-top: 10px;
+    border-top: 2px solid #3d405b;
+    margin-top: 1vh;
     position: fixed;
+    z-index: 1;
+    }
+    #vlk{
+    margin-top: 35vh;
+    font-size: 5vw;
+    }
 }
 
-.home-button{
-    color: #3d405b;
-    font-size: 2.5rem;
-    text-decoration: none;
-    justify-self: center;
-    margin-top: 15px;
-    position: absolute;
+@media screen and (max-width: 400px) {
+    .home-button{
+        color: #3d405b;
+        font-size: 3rem;
+        text-decoration: none;
+        justify-self: center;   
+        margin-top: 1vh;
+        position: fixed;
+        z-index: 2;
+    }
+    .home{
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
+    grid-template-areas: 
+    "C1 mt1 mt3 hmb mt4 mt2 C4"
+    "C1 . c2 . c3 . C4"
+    ;
+    width: 320px; 
+    height: 90px;
+    border-top: 2px solid #3d405b;
+    margin-top: 1vh;
+    position: fixed;
+    }
+    #vlk{
+    margin-top: 20vh;
+    font-size: 6vw;
+    z-index: 2;
+}
 }
 
 .C1{
     grid-area: C1;
     display: grid;
-    border-bottom: #3d405b 1px solid;
-    border-left: #3d405b 1px solid;
+    border-bottom: #3d405b 2px solid;
+    border-left: #3d405b 2px solid;
     grid-template-rows: 2fr 1fr;
     grid-template-areas: 
     "."
@@ -121,6 +159,7 @@ h1{
     "c4"
     ;
     box-shadow: 5px 5px black;
+    border-right: #3d405b 2px solid;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
     background-color: #f4f1de;
@@ -134,7 +173,6 @@ h1{
     align-items: center;
     justify-content: center;
     border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
 }
 
 .mt3{
@@ -149,6 +187,23 @@ h1{
     background-color: #f4f1de;
 }
 
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 #start{
     display: block;
     width: auto;
@@ -157,8 +212,10 @@ h1{
     border: 4px solid #e07a5f;
     box-shadow: 5px 5px;
     font-size: large;
-    margin-top: 100vh;
+    margin-top: 60vh;
     margin-bottom: 10vh;
+    opacity: 0;
+    transition: opacity 3s;
 }
 
 #start:hover {
