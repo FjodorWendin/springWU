@@ -3,7 +3,7 @@ window.onload = main;
 function isElementIntoView(el) { 
     let e = document.querySelector(el);
     let rect = e.getBoundingClientRect();
-        return  window.innerHeight-rect.top >= 200;
+        return  window.innerHeight-rect.top >= 270;
 }
 
 function main() {
